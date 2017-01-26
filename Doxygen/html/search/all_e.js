@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['total',['total',['../struct__RIPEMD160__CTX.html#a2cbc656593e6b4a4b5611175cd798c39',1,'_RIPEMD160_CTX']]]
+  ['state',['state',['../struct__RIPEMD160__CTX.html#a1a4553dd5a4507fd12b2d93ae06aa0cc',1,'_RIPEMD160_CTX']]]
 ];

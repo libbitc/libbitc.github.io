@@ -7,5 +7,6 @@ var searchData=
   ['parr',['parr',['../structparr.html',1,'']]],
   ['peer',['peer',['../structpeer.html',1,'']]],
   ['peer_5fmanager',['peer_manager',['../structpeer__manager.html',1,'']]],
-  ['pollfd',['pollfd',['../structpollfd.html',1,'']]]
+  ['pollfd',['pollfd',['../structpollfd.html',1,'']]],
+  ['printbuffer',['printbuffer',['../structprintbuffer.html',1,'']]]
 ];

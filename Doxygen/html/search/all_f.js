@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['wallet',['wallet',['../structwallet.html',1,'']]],
-  ['wallet_5faccount',['wallet_account',['../structwallet__account.html',1,'']]]
+  ['total',['total',['../struct__RIPEMD160__CTX.html#a2cbc656593e6b4a4b5611175cd798c39',1,'_RIPEMD160_CTX']]]
 ];
