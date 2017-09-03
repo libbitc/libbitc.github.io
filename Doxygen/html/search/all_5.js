@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['error',['error',['../structerror.html',1,'']]],
   ['ev_5fany_5fwatcher',['ev_any_watcher',['../unionev__any__watcher.html',1,'']]],
   ['ev_5fasync',['ev_async',['../structev__async.html',1,'']]],
   ['ev_5fcheck',['ev_check',['../structev__check.html',1,'']]],
