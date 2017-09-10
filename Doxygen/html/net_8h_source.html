@@ -24,7 +24,7 @@
   <td id="projectlogo"><img alt="Logo" src="BitcoinSign_small.svg"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">libbitc
-   &#160;<span id="projectnumber">0.1.0</span>
+   &#160;<span id="projectnumber">0.1.1</span>
    </div>
   </td>
  </tr>
@@ -144,7 +144,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">struct </span><a class="code" href="structblkdb.html">blkdb</a>        *db;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="structparr.html">parr</a>            *conns;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keyword">struct </span><a class="code" href="structevent__base.html">event_base</a>   *eb;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keyword">struct </span>event_base   *eb;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    time_t          last_getblocks;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>        net_conn_timeout;</div>
@@ -169,10 +169,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">bool</span>            ipv4;</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">bool</span>            connected;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keyword">struct </span><a class="code" href="structevent.html">event</a>        *ev;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keyword">struct </span>event        *ev;</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keyword">struct </span><a class="code" href="structnet__child__info.html">net_child_info</a>   *nci;</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keyword">struct </span><a class="code" href="structevent.html">event</a>        *write_ev;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keyword">struct </span>event        *write_ev;</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <a class="code" href="structclist.html">clist</a>           *write_q;   <span class="comment">/* of struct buffer */</span></div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>        write_partial;</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
@@ -216,7 +216,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="structnc__conn_html"><div class="ttname"><a href="structnc__conn.html">nc_conn</a></div><div class="ttdef"><b>Definition:</b> net.h:71</div></div>
 <div class="ttc" id="structchain__info_html"><div class="ttname"><a href="structchain__info.html">chain_info</a></div><div class="ttdef"><b>Definition:</b> coredefs.h:52</div></div>
 <div class="ttc" id="structpeer__manager_html"><div class="ttname"><a href="structpeer__manager.html">peer_manager</a></div><div class="ttdef"><b>Definition:</b> peerman.h:51</div></div>
-<div class="ttc" id="structevent_html"><div class="ttname"><a href="structevent.html">event</a></div><div class="ttdef"><b>Definition:</b> event.h:80</div></div>
 <div class="ttc" id="structpeer_html"><div class="ttname"><a href="structpeer.html">peer</a></div><div class="ttdef"><b>Definition:</b> peerman.h:16</div></div>
 <div class="ttc" id="structbitc__block_html"><div class="ttname"><a href="structbitc__block.html">bitc_block</a></div><div class="ttdef"><b>Definition:</b> core.h:228</div></div>
 <div class="ttc" id="structclist_html"><div class="ttname"><a href="structclist.html">clist</a></div><div class="ttdef"><b>Definition:</b> clist.h:14</div></div>
@@ -224,13 +223,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="structbu256_html"><div class="ttname"><a href="structbu256.html">bu256</a></div><div class="ttdef"><b>Definition:</b> buint.h:36</div></div>
 <div class="ttc" id="structparr_html"><div class="ttname"><a href="structparr.html">parr</a></div><div class="ttdef"><b>Definition:</b> parr.h:16</div></div>
 <div class="ttc" id="structblkdb_html"><div class="ttname"><a href="structblkdb.html">blkdb</a></div><div class="ttdef"><b>Definition:</b> blkdb.h:38</div></div>
-<div class="ttc" id="structevent__base_html"><div class="ttname"><a href="structevent__base.html">event_base</a></div><div class="ttdef"><b>Definition:</b> event.c:59</div></div>
 <div class="ttc" id="structconst__buffer_html"><div class="ttname"><a href="structconst__buffer.html">const_buffer</a></div><div class="ttdef"><b>Definition:</b> buffer.h:20</div></div>
 <div class="ttc" id="structp2p__message__hdr_html"><div class="ttname"><a href="structp2p__message__hdr.html">p2p_message_hdr</a></div><div class="ttdef"><b>Definition:</b> message.h:25</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Sep 3 2017 17:55:54 for libbitc by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Sep 10 2017 18:04:28 for libbitc by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -1,10 +1,6 @@
 var searchData=
 [
-  ['mbuf_5freader',['mbuf_reader',['../structmbuf__reader.html',1,'']]],
-  ['msg_5faddr',['msg_addr',['../structmsg__addr.html',1,'']]],
-  ['msg_5fgetblocks',['msg_getblocks',['../structmsg__getblocks.html',1,'']]],
-  ['msg_5fheaders',['msg_headers',['../structmsg__headers.html',1,'']]],
-  ['msg_5fping',['msg_ping',['../structmsg__ping.html',1,'']]],
-  ['msg_5fversion',['msg_version',['../structmsg__version.html',1,'']]],
-  ['msg_5fvinv',['msg_vinv',['../structmsg__vinv.html',1,'']]]
+  ['nc_5fconn',['nc_conn',['../structnc__conn.html',1,'']]],
+  ['net_5fchild_5finfo',['net_child_info',['../structnet__child__info.html',1,'']]],
+  ['net_5fengine',['net_engine',['../structnet__engine.html',1,'']]]
 ];
