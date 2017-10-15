@@ -18,8 +18,6 @@ var searchData=
   ['bitc_5ftxout',['bitc_txout',['../structbitc__txout.html',1,'']]],
   ['bitc_5futxo',['bitc_utxo',['../structbitc__utxo.html',1,'']]],
   ['bitc_5futxo_5fset',['bitc_utxo_set',['../structbitc__utxo__set.html',1,'']]],
-  ['blkdb',['blkdb',['../structblkdb.html',1,'']]],
-  ['blkdb_5freorg',['blkdb_reorg',['../structblkdb__reorg.html',1,'']]],
   ['blkinfo',['blkinfo',['../structblkinfo.html',1,'']]],
   ['bloom',['bloom',['../structbloom.html',1,'']]],
   ['bscript_5faddr',['bscript_addr',['../structbscript__addr.html',1,'']]],
