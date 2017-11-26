@@ -24,7 +24,7 @@
   <td id="projectlogo"><img alt="Logo" src="BitcoinSign_small.svg"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">libbitc
-   &#160;<span id="projectnumber">0.2.0</span>
+   &#160;<span id="projectnumber">0.2.1</span>
    </div>
   </td>
  </tr>
@@ -119,114 +119,110 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">enum</span> {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    PROTO_VERSION   = 60002,</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    NC_MAX_CONN = 8,</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;};</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">enum</span> {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    NC_MAX_CONN = 8,</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;};</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">enum</span> netcmds {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    NC_OK,</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    NC_ERR,</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    NC_TIMEOUT,</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    NC_START,</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    NC_STOP,</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;};</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">struct </span>net_settings *net_settings;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">enum</span> netcmds {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    NC_OK,</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    NC_ERR,</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    NC_TIMEOUT,</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    NC_START,</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    NC_STOP,</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;};</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">struct </span>net_settings *net_settings;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="structnet__child__info.html">   44</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structnet__child__info.html">net_child_info</a> {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">int</span>         read_fd;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">int</span>         write_fd;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="structnet__child__info.html">   48</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structnet__child__info.html">net_child_info</a> {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">int</span>         read_fd;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">int</span>         write_fd;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">struct </span><a class="code" href="structpeer__manager.html">peer_manager</a> *peers;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">struct </span><a class="code" href="structchaindb.html">chaindb</a>      *db;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="structparr.html">parr</a>            *conns;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keyword">struct </span>event_base   *eb;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    time_t          last_getblocks;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>        net_conn_timeout;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">const</span> <span class="keyword">struct        </span><a class="code" href="structchain__info.html">chain_info</a> *chain;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    uint64_t        *instance_nonce;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">bool</span>            running;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    bool (*inv_block_process)(<a class="code" href="structbu256.html">bu256_t</a> *hash);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    bool (*block_process)(<span class="keyword">struct </span><a class="code" href="structbitc__block.html">bitc_block</a> *block,</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                          <span class="keyword">struct </span><a class="code" href="structconst__buffer.html">const_buffer</a> *buf);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;};</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="structnc__conn.html">   70</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structnc__conn.html">nc_conn</a> {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">bool</span>            dead;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">int</span>         fd;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keyword">struct </span><a class="code" href="structpeer.html">peer</a>     peer;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">char</span>            addr_str[64];</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">bool</span>            ipv4;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">bool</span>            connected;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">struct </span>event        *ev;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keyword">struct </span><a class="code" href="structnet__child__info.html">net_child_info</a>   *nci;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">struct </span><a class="code" href="structpeer__manager.html">peer_manager</a> *peers;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">struct </span><a class="code" href="structchaindb.html">chaindb</a>      *db;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="structparr.html">parr</a>            *conns;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">struct </span>event_base   *eb;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    time_t          last_getblocks;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>        net_conn_timeout;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keyword">const</span> <span class="keyword">struct        </span><a class="code" href="structchain__info.html">chain_info</a> *chain;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    uint64_t        *instance_nonce;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">bool</span>            running;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    bool (*inv_block_process)(<a class="code" href="structbu256.html">bu256_t</a> *hash);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    bool (*block_process)(<span class="keyword">struct </span><a class="code" href="structbitc__block.html">bitc_block</a> *block,</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                          <span class="keyword">struct </span><a class="code" href="structconst__buffer.html">const_buffer</a> *buf);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;};</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="structnc__conn.html">   66</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structnc__conn.html">nc_conn</a> {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">bool</span>            dead;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">int</span>         fd;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keyword">struct </span><a class="code" href="structpeer.html">peer</a>     peer;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">char</span>            addr_str[64];</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">bool</span>            ipv4;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">bool</span>            connected;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keyword">struct </span>event        *ev;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keyword">struct </span><a class="code" href="structnet__child__info.html">net_child_info</a>   *nci;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keyword">struct </span>event        *write_ev;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <a class="code" href="structclist.html">clist</a>           *write_q;   <span class="comment">/* of struct buffer */</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>        write_partial;</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keyword">struct </span>event        *write_ev;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <a class="code" href="structclist.html">clist</a>           *write_q;   <span class="comment">/* of struct buffer */</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>        write_partial;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keyword">struct </span><a class="code" href="structp2p__message.html">p2p_message</a>  msg;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordtype">void</span>            *msg_p;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>        expected;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordtype">bool</span>            reading_hdr;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>       hdrbuf[P2P_HDR_SZ];</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordtype">bool</span>            seen_version;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordtype">bool</span>            seen_verack;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    uint32_t        protover;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;};</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
-<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="structnet__engine.html">   99</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structnet__engine.html">net_engine</a> {</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordtype">bool</span>    running;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordtype">int</span> rx_pipefd[2];</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordtype">int</span> tx_pipefd[2];</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordtype">int</span> par_read;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordtype">int</span> par_write;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    pid_t   child;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    void (*network_child_process)(<span class="keywordtype">int</span> read_fd, <span class="keywordtype">int</span> write_fd);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keyword">struct </span><a class="code" href="structp2p__message.html">p2p_message</a>  msg;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">void</span>            *msg_p;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>        expected;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordtype">bool</span>            reading_hdr;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>       hdrbuf[P2P_HDR_SZ];</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordtype">bool</span>            seen_version;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordtype">bool</span>            seen_verack;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    uint32_t        protover;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;};</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="structnet__engine.html">   95</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structnet__engine.html">net_engine</a> {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordtype">bool</span>    running;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordtype">int</span> rx_pipefd[2];</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordtype">int</span> tx_pipefd[2];</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordtype">int</span> par_read;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordtype">int</span> par_write;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    pid_t   child;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    void (*network_child_process)(<span class="keywordtype">int</span> read_fd, <span class="keywordtype">int</span> write_fd);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;};</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="keyword">struct </span><a class="code" href="structnet__engine.html">net_engine</a> *neteng_new_start(<span class="keywordtype">void</span> (*network_child)(<span class="keywordtype">int</span> read_fd, <span class="keywordtype">int</span> write_fd));</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;};</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="keyword">struct </span><a class="code" href="structnet__engine.html">net_engine</a> *neteng_new_start(<span class="keywordtype">void</span> (*network_child)(<span class="keywordtype">int</span> read_fd, <span class="keywordtype">int</span> write_fd));</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> nc_conns_process(<span class="keyword">struct</span> <a class="code" href="structnet__child__info.html">net_child_info</a> *nci);</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> nc_conns_gc(<span class="keyword">struct</span> <a class="code" href="structnet__child__info.html">net_child_info</a> *nci, <span class="keywordtype">bool</span> free_all);</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> nc_pipe_evt(<span class="keywordtype">int</span> fd, <span class="keywordtype">short</span> events, <span class="keywordtype">void</span> *priv);</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> neteng_free(<span class="keyword">struct</span> <a class="code" href="structnet__engine.html">net_engine</a> *neteng);</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="preprocessor"></span>}</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* __LIBBITC_NET_NET_H__ */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="structnet__child__info_html"><div class="ttname"><a href="structnet__child__info.html">net_child_info</a></div><div class="ttdef"><b>Definition:</b> net.h:48</div></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> nc_conns_process(<span class="keyword">struct</span> <a class="code" href="structnet__child__info.html">net_child_info</a> *nci);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> nc_conns_gc(<span class="keyword">struct</span> <a class="code" href="structnet__child__info.html">net_child_info</a> *nci, <span class="keywordtype">bool</span> free_all);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> nc_pipe_evt(<span class="keywordtype">int</span> fd, <span class="keywordtype">short</span> events, <span class="keywordtype">void</span> *priv);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> neteng_free(<span class="keyword">struct</span> <a class="code" href="structnet__engine.html">net_engine</a> *neteng);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="preprocessor"></span>}</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* __LIBBITC_NET_NET_H__ */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="structnet__child__info_html"><div class="ttname"><a href="structnet__child__info.html">net_child_info</a></div><div class="ttdef"><b>Definition:</b> net.h:44</div></div>
 <div class="ttc" id="structp2p__message_html"><div class="ttname"><a href="structp2p__message.html">p2p_message</a></div><div class="ttdef"><b>Definition:</b> message.h:32</div></div>
-<div class="ttc" id="structnc__conn_html"><div class="ttname"><a href="structnc__conn.html">nc_conn</a></div><div class="ttdef"><b>Definition:</b> net.h:70</div></div>
-<div class="ttc" id="structchain__info_html"><div class="ttname"><a href="structchain__info.html">chain_info</a></div><div class="ttdef"><b>Definition:</b> coredefs.h:52</div></div>
+<div class="ttc" id="structnc__conn_html"><div class="ttname"><a href="structnc__conn.html">nc_conn</a></div><div class="ttdef"><b>Definition:</b> net.h:66</div></div>
+<div class="ttc" id="structchain__info_html"><div class="ttname"><a href="structchain__info.html">chain_info</a></div><div class="ttdef"><b>Definition:</b> coredefs.h:42</div></div>
 <div class="ttc" id="structpeer__manager_html"><div class="ttname"><a href="structpeer__manager.html">peer_manager</a></div><div class="ttdef"><b>Definition:</b> peerman.h:51</div></div>
 <div class="ttc" id="structpeer_html"><div class="ttname"><a href="structpeer.html">peer</a></div><div class="ttdef"><b>Definition:</b> peerman.h:16</div></div>
 <div class="ttc" id="structchaindb_html"><div class="ttname"><a href="structchaindb.html">chaindb</a></div><div class="ttdef"><b>Definition:</b> chaindb.h:37</div></div>
 <div class="ttc" id="structbitc__block_html"><div class="ttname"><a href="structbitc__block.html">bitc_block</a></div><div class="ttdef"><b>Definition:</b> core.h:228</div></div>
 <div class="ttc" id="structclist_html"><div class="ttname"><a href="structclist.html">clist</a></div><div class="ttdef"><b>Definition:</b> clist.h:14</div></div>
-<div class="ttc" id="structnet__engine_html"><div class="ttname"><a href="structnet__engine.html">net_engine</a></div><div class="ttdef"><b>Definition:</b> net.h:99</div></div>
+<div class="ttc" id="structnet__engine_html"><div class="ttname"><a href="structnet__engine.html">net_engine</a></div><div class="ttdef"><b>Definition:</b> net.h:95</div></div>
 <div class="ttc" id="structbu256_html"><div class="ttname"><a href="structbu256.html">bu256</a></div><div class="ttdef"><b>Definition:</b> buint.h:36</div></div>
 <div class="ttc" id="structparr_html"><div class="ttname"><a href="structparr.html">parr</a></div><div class="ttdef"><b>Definition:</b> parr.h:16</div></div>
 <div class="ttc" id="structconst__buffer_html"><div class="ttname"><a href="structconst__buffer.html">const_buffer</a></div><div class="ttdef"><b>Definition:</b> buffer.h:20</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Oct 15 2017 01:07:47 for libbitc by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Nov 26 2017 01:01:36 for libbitc by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
